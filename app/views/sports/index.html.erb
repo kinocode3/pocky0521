@@ -1,0 +1,27 @@
+<div class="jumbotron"> 
+<p id="notice"><%= flash[:notice] %></p>
+<h1> <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Danger Sports</h1>
+<p>危険なスポーツを紹介するサイトです。</p>
+<p>詳しい情報は名前をクリックしてください。</p>
+
+<%=link_to '新しいスポーツを登録する', new_sport_path %>
+</div>
+ <div class='row row-height'>
+  <% for b in @sports %>
+     <% @sport_NO = @sport_NO +1%>
+     <div class="col-md-3">
+     <div class="panel panel-warning">
+     <div class="panel-heading"> 
+     <h4>NO.<%=@sport_NO %> : <%= b.name%></h4>
+     </div>
+     <div class="panel-body">
+     <p>登録日<%=b.created_at %></p>
+     <p>最終更新日<%=b.updated_at %></p>
+     </div>
+     <div class="panel-footer">
+     <%= link_to '詳しく見る', sport_path(id:b.id,sport_NO: @sport_NO)%>
+     </div>
+     </div>
+     </div>    
+<% end %>
+</div>

@@ -1,0 +1,34 @@
+<div class="page-header">
+<h1><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>編集するページ</h1>
+</div>
+<%= form_for(@sport) do |f| %>
+
+   <div class=:"form-group">
+     <%= f.label :タイトル %><br>      
+     <%= f.text_field :name,class:"form-control" %>
+   </div>
+   
+   
+   <div class=:"form-group">
+      <%= f.label :読んだ日 %><br>      
+      <%= f.text_field :date,class:"form-control" %>
+  </div>
+  
+  
+  <div class=:"form-group">
+      <%= f.label :評価（☆マーク） %><br>     
+      <%= f.text_field :star,class:"form-control" %>
+  </div>
+  
+  
+  <div class=:"form-group">
+      <%= f.label :動画 %><br>
+      <%= f.text_field :clip,class:"form-control" %>
+    
+  <div class="actions">
+      <%= f.submit '登録', class: "btn btn-default",role: "button"  %>
+      <%= link_to '編集せずに戻る', sport_path(id: @sport.id), target: "_brank", class: "btn btn-default",role: "button" %>
+      <%= link_to '削除', sport_path, method: :delete, data: { confirm: 'Really?'}, class: "btn btn-danger",role: "button" %>
+      
+  </div>
+<% end %>

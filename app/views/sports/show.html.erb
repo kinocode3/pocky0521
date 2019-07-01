@@ -1,0 +1,8 @@
+<h1><%= @sport.name %></h1>
+<P><span class="label label-default">ID</span> : <%= @sport_NO %></p>
+<p><span class="label label-info">投稿日</span>：<%= @sport.date %></p>
+<p><span class="label label-warning">危険度</span>：<%= @sport.star %></p>
+<p><span class="label label-danger">動画</span>：<%= @sport.clip %></p>
+
+   <%=link_to 'トップに戻る', sports_path, target: "_brank",class: "btn btn-default", role: "button" %>
+    <%= link_to '内容を変更する', edit_sport_path, target: "_brank",class: "btn btn-default", role: "button" %>
